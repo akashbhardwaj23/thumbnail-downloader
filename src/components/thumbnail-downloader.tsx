@@ -108,7 +108,7 @@ export function ThumbnailDownloader() {
                   <h2 className="text-lg font-semibold mb-2">Thumbnail Preview</h2>
                   <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
                     <img
-                      src={getThumbnailUrl('mq')}
+                      src={getThumbnailUrl('max')}
                       alt="Video Thumbnail"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
