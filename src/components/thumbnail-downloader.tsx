@@ -1,5 +1,4 @@
 'use client'
-
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -24,29 +23,12 @@ export function ThumbnailDownloader() {
         });
   
         const thumbnails = response.data.thumbnails;
-        console.log(thumbnails)
         setThumbnails(thumbnails)
       }
     } catch (error) {
-      console.log(error)
+      setError("Error in Requesting the backend")
     }
   }
-
-  
-
-  // const handleUrlChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   setVideoUrl(e.target.value)
-  //   setError('')
-  //   const id = extractVideoId(e.target.value)
-  //   if (id) {
-  //     setVideoId(id)
-  //   } else {
-  //     setVideoId('')
-  //     if (e.target.value) {
-  //       setError('Invalid YouTube URL')
-  //     }
-  //   }
-  // }
 
   const getThumbnailUrl = (size: string) => {
     if (!thumbnails) return ''
@@ -68,7 +50,7 @@ export function ThumbnailDownloader() {
   }
 
   return (
-    <div className="bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-b from-gray-100 to-gray-200 rounded-xl dark:from-gray-900 dark:to-gray-800 py-12 px-4 sm:px-6 lg:px-8">
       <Card className="max-w-4xl mx-auto">
         <CardHeader>
           <CardTitle className="text-3xl font-bold text-center flex items-center justify-center gap-2">

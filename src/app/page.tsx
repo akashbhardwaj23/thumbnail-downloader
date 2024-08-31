@@ -1,4 +1,6 @@
-import { ThumbnailDownloader } from "@/component/thumbnail-downloader";
+
+import { ThumbnailDownloader } from "@/components/thumbnail-downloader";
+import Image from "next/image";
 
 export default function Home() {
   return (
