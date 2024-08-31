@@ -1,4 +1,5 @@
 
+import { Appbar } from "@/components/Appbar";
 import { ThumbnailDownloader } from "@/components/thumbnail-downloader";
 import Image from "next/image";
 
