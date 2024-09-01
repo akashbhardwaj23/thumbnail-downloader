@@ -37,10 +37,10 @@ export function ThumbnailDownloader() {
   }
 
 
-  const downloadThumbnail = (size: string) => {
+  const downloadThumbnail = async(size: string) => {
     const url = getThumbnailUrl(size)
     if (url) {
-      const link = document.createElement('a')
+      const link = document.createElement('a')  
       link.href = url
       link.download = `youtube-thumbnail-${size}.jpg`
       document.body.appendChild(link)
