@@ -20,8 +20,8 @@ export async function getThumbnails(id : string){
         },
         max : {
             url : 'http://img.youtube.com/vi/' + id + '/maxresdefault.jpg',
-            width : 1280,
-            height : 720
+            width : 1920,
+            height : 1280
         }
     }
 }
