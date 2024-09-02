@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Provider } from "./provider";
 import { Appbar } from "@/components/Appbar";
+import '@solana/wallet-adapter-react-ui/styles.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
