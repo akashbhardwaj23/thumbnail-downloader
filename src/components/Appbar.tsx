@@ -10,7 +10,6 @@ import { useWallet } from "@solana/wallet-adapter-react";
 
 export function Appbar(){
     const session = useSession();
-    console.log(session);
     const [darkMode, setDarkMode] = useState<boolean>(false)
     const {publicKey, wallet} = useWallet()
 

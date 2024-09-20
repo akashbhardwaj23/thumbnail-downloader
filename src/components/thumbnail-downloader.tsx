@@ -17,15 +17,22 @@ import axios from "axios";
 const REGEX =
   /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
 
+
+
+interface Thumbnails {
+  default : string,
+  hq : string | null,
+  mq : string | null,
+  max : string | null
+}
+
 export function ThumbnailDownloader() {
   const [videoUrl, setVideoUrl] = useState("");
-  const [thumbnails, setThumbnails] = useState("");
+  const [thumbnails, setThumbnails] = useState<Thumbnails | null>(null);
   const [error, setError] = useState("");
 
   const getThumbnail = async () => {
     try {
-      console.log("video url ", videoUrl);
-
       const correctUrl = videoUrl.match(REGEX);
       if (!correctUrl) {
         setError("Incorrect URL");
@@ -46,6 +53,8 @@ export function ThumbnailDownloader() {
 
   const getThumbnailUrl = (size: string) => {
     if (!thumbnails) return "";
+    console.log(thumbnails)
+
     //@ts-ignore
     return thumbnails[size].url;
   };

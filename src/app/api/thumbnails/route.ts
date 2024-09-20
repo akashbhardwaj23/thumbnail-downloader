@@ -7,14 +7,10 @@ const InputData = z.object({
     url : z.string(),
     userId : z.string()
 })
-type InputDataType = z.infer<typeof InputData>
 
 export async function POST(req : NextRequest){
     const body = await req.json()
     const success = InputData.safeParse(body);
-
-    console.log(body)
-
     if(!success.success){
         return NextResponse.json({
             message : "Please Send a Valid Input"
@@ -24,12 +20,7 @@ export async function POST(req : NextRequest){
     };
 
     const id = extractVideoId(body.url)
-
-    console.log(id)
-
     const thumbnails = await getThumbnails(id || "")
-
-    
     return NextResponse.json({
         thumbnails
     }, {
